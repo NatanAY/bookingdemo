@@ -16,13 +16,8 @@ public class BookingController {
     public BookingController(){
     }
 
-    @RequestMapping(value = "/findall")
-    @ResponseBody
-    public List<HotelBooking> findall(){
-        return bookingRepository.findAll();
-    }
-
     @RequestMapping(value = "/all", method = RequestMethod.GET)
+    @ResponseBody
     public List<HotelBooking> getAll(){
         return bookingRepository.findAll();
     }
@@ -41,7 +36,6 @@ public class BookingController {
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public List<HotelBooking> remove(@PathVariable Integer id){
         bookingRepository.delete(id);
-
         return bookingRepository.findAll();
     }
 
