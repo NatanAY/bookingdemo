@@ -7,7 +7,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/booking")
+@RequestMapping("/bookings")
 public class BookingController {
 
     @Autowired
@@ -33,7 +33,7 @@ public class BookingController {
         return bookingRepository.findAll();
     }
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     public List<HotelBooking> remove(@PathVariable Integer id){
         bookingRepository.delete(id);
         return bookingRepository.findAll();
