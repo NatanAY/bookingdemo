@@ -1,5 +1,7 @@
 package com.demo;
 
+import org.jsondoc.core.annotation.Api;
+import org.jsondoc.core.pojo.ApiStage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,6 +10,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/bookings")
+@Api(
+        name = "Hotel Booking API",
+        description = "Provides a list of methods that manage hotel bookings",
+        stage = ApiStage.RC )
 public class BookingController {
 
     @Autowired
